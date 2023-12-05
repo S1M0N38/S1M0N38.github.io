@@ -1,7 +1,7 @@
 baseURL = 'https://S1M0N38.github.io/'
 languageCode = 'en-us'
 title = 'S1M0N38'
-theme = 'hugo-pure'
+theme = 'sugo'
 
 [menu]
   [[menu.main]]
@@ -9,4 +9,4 @@ theme = 'hugo-pure'
 
 [markup]
   [markup.highlight]
-    noClasses = false
+    noclasses = false
