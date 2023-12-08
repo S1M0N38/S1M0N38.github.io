@@ -36,6 +36,8 @@ Using `cd` and `ls` commands is an effective way to explore the server and find 
 
 [Tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer pre-installed on many Linux distributions. It allows you to create multiple terminal sessions to start background processes, keep them running after closing the SSH connection, and re-attach to them later.
 
+If you need to exchange files between your local machine and the server, you can use the [rsync](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories) command. For instance, you can upload a codebase to the server and download the produced artifacts.
+
 ## Install Python
 
 My preferred way to install different Python versions is to use [pyenv](https://github.com/pyenv/pyenv), but it requires installing [some dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) using sudo. An alternative is to use [miniconda](https://docs.conda.io/projects/miniconda/en/latest), which is a Python distribution.
