@@ -85,7 +85,7 @@ jupyter notebook --port=8377 --no-browser
 
 ## Monitoring Server Resources
 
-Monitoring server resources is important for debugging purposes, restricting, or fully utilizing resources.
+Monitoring server resources is crucial for debugging purposes, restricting, or fully utilizing resources.
 
 - [df](https://www.man7.org/linux/man-pages/man1/df.1.html): command to check disk partition usage.
 
@@ -105,4 +105,17 @@ Some common pitfalls in resource usage include:
 
 - **Leaving a Jupyter notebook running**. If the notebook allocates RAM or GPU memory, it keeps the resources allocated until the kernel is restarted or the notebook is closed.
 
-- **Using all the CPU cores**. This can be caused by libraries that use multiprocessing under the hood. For instance, some algorithms in scikit-learn use multiprocessing and by default use all the available cores (this can be changed with the `n_jobs` parameter).
+- **Using all the CPU cores**. This can be caused by libraries that use multiprocessing under the hood. For instance, some routines in Python scientific libraries ([scikit-learn](https://scikit-learn.org/stable/computing/parallelism.html), [umap](https://umap-learn.readthedocs.io/en/latest/faq.html#umap-is-eating-all-my-cores-help)) can make use of multiple threads. In those cases, you can limit the number of threads by setting environment variables, i.e.,
+
+```python
+import os
+
+# limit computation to 4 threads
+os.environ['NUMBA_NUM_THREADS'] = '4'
+os.environ['OMP_NUM_THREADS'] = '4'
+os.environ['MKL_NUM_THREADS'] = '4'
+os.environ['OPENBLAS_NUM_THREADS'] = '4'
+os.environ['BLIS_NUM_THREADS'] = '4'
+
+# your code here ...
+```
