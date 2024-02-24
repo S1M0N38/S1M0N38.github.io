@@ -72,7 +72,7 @@ To do so, you need to pip install `ipykernel` in `my-project-venv` and register 
 
 ```
 python -m pip install ipykernel
-jupyter kernelspec install path/to/my-project-venv --user --name=my-project-venv
+python -m ipykernel install --user --name=my-project-venv
 ```
 
 When you open a notebook, you can select the kernel to use from the menu *Kernel > Change kernel*. This method allows for a single installation of Jupyter and multiple kernels for different projects.
